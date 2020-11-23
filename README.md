@@ -1,4 +1,4 @@
-# Finding Falcone build with React and Typescript
+# Finding Falcone built with React and Typescript
 
 ## LIVE: https://finding-falcone-christian-sugi.herokuapp.com/
 
