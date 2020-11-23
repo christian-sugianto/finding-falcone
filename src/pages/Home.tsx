@@ -117,8 +117,6 @@ const Home: React.FC = () => {
             totalTimeTaken: totalTimeTaken,
           },
         });
-
-        // history.push("/success");
       } else if (res.status === "false") {
         alert("Fail to find Falcone, Please try again!");
       } else if (res.error) {
@@ -136,6 +134,7 @@ const Home: React.FC = () => {
           <SubTitle>Select Planets you want to search in:</SubTitle>
         </Grid>
       </Grid>
+
       <GridSubContainer container spacing={1}>
         <Grid item xs>
           <PlanetSelect
@@ -201,6 +200,7 @@ const Home: React.FC = () => {
           <TimeTakenContainer>Time Taken: {totalTimeTaken}</TimeTakenContainer>
         </Grid>
       </GridSubContainer>
+
       <GridBottomContainer container>
         <Grid item xs>
           <Button variant="contained" onClick={() => handleFindFalcone()}>

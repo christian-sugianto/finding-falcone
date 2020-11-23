@@ -8,7 +8,7 @@ import { Planet } from "../services/FindingFalconeService/FindFalconeService";
 interface Props {
   destNum: number;
   planetOptions?: Planet[];
-  selectPlanet: (planetName: Planet) => void;
+  selectPlanet: (planet: Planet) => void;
 }
 
 const PlanetSelect: React.FC<Props> = ({
@@ -32,6 +32,7 @@ const PlanetSelect: React.FC<Props> = ({
       <Autocomplete
         options={planetOptions ? planetOptions : []}
         getOptionLabel={(option: Planet) => option.name}
+        getOptionSelected={(option, value) => option.name === value.name}
         renderInput={(params: any) => (
           <CssTextField
             {...params}
