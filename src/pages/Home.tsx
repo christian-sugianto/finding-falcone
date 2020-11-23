@@ -61,7 +61,7 @@ const Home: React.FC = () => {
     fetchData();
   }, []);
 
-  const selectPlanet = (destNum: number, planet: Planet) => {
+  const selectPlanet = (destNum: number, planet?: Planet) => {
     let newDestinations = destinations;
     newDestinations[destNum - 1] = {
       destNum,
@@ -80,6 +80,8 @@ const Home: React.FC = () => {
     };
     setDestinations([...newDestinations]);
   };
+
+  const isFindFalconeButtonEnabled = () => {};
 
   const findFalcone = async () => {
     let getTokenRes = await findFalconeService.getToken();
@@ -140,7 +142,7 @@ const Home: React.FC = () => {
           <PlanetSelect
             destNum={1}
             planetOptions={filteredPlanetOptions}
-            selectPlanet={(planet: Planet) => selectPlanet(1, planet)}
+            selectPlanet={(planet?: Planet) => selectPlanet(1, planet)}
           />
           {destinations[0].planet && (
             <VehicleSelect
@@ -155,7 +157,7 @@ const Home: React.FC = () => {
           <PlanetSelect
             destNum={2}
             planetOptions={filteredPlanetOptions}
-            selectPlanet={(planet: Planet) => selectPlanet(2, planet)}
+            selectPlanet={(planet?: Planet) => selectPlanet(2, planet)}
           />
           {destinations[1].planet && (
             <VehicleSelect
@@ -170,7 +172,7 @@ const Home: React.FC = () => {
           <PlanetSelect
             destNum={3}
             planetOptions={filteredPlanetOptions}
-            selectPlanet={(planet: Planet) => selectPlanet(3, planet)}
+            selectPlanet={(planet?: Planet) => selectPlanet(3, planet)}
           />
           {destinations[2].planet && (
             <VehicleSelect
@@ -185,7 +187,7 @@ const Home: React.FC = () => {
           <PlanetSelect
             destNum={4}
             planetOptions={filteredPlanetOptions}
-            selectPlanet={(planet: Planet) => selectPlanet(4, planet)}
+            selectPlanet={(planet?: Planet) => selectPlanet(4, planet)}
           />
           {destinations[3].planet && (
             <VehicleSelect

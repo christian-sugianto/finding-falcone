@@ -8,7 +8,7 @@ import { Planet } from "../services/FindingFalconeService/FindFalconeService";
 interface Props {
   destNum: number;
   planetOptions?: Planet[];
-  selectPlanet: (planet: Planet) => void;
+  selectPlanet: (planet?: Planet) => void;
 }
 
 const PlanetSelect: React.FC<Props> = ({
@@ -18,6 +18,9 @@ const PlanetSelect: React.FC<Props> = ({
 }) => {
   const handleSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (planetOptions) {
+      if (e.target.value === "") {
+        selectPlanet(undefined);
+      }
       for (var i = 0; i < planetOptions.length; i++) {
         if (planetOptions[i].name === e.target.value) {
           selectPlanet(planetOptions[i]);
