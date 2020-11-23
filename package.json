@@ -28,13 +28,15 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-table": "^7.2.1",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.1",
     "supertest": "^6.0.1",
     "ts-jest": "^26.4.4",
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "jest",
