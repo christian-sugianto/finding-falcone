@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import colors from "../assets/consts";
 import { Grid, Button } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
-import PlanetSelect from "../components/PlanetSelect";
-import findFalconeService, {
-  Planet,
-  Vehicle,
-} from "../services/FindingFalconeService/FindFalconeService";
-import VehicleSelect from "../components/VehicleSelect";
 import { StyledContainer } from "./Home";
 
 const Success: React.FC = () => {
   const history = useHistory();
-  const [isFetched, setFetched] = useState<boolean>(false);
   const {
     state: { planetName, totalTimeTaken },
   } = useLocation();
@@ -61,12 +54,6 @@ const Success: React.FC = () => {
     </StyledContainer>
   );
 };
-
-export interface Destination {
-  destNum: number;
-  planet?: Planet;
-  vehicle?: Vehicle;
-}
 
 const SubContainer = styled.div`
   margin-top: 10rem;
