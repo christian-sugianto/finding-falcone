@@ -81,7 +81,17 @@ const Home: React.FC = () => {
     setDestinations([...newDestinations]);
   };
 
-  const isFindFalconeButtonEnabled = () => {};
+  const isFindFalconeButtonEnabled = () => {
+    for (let i = 0; i < destinations.length; i++) {
+      if (
+        destinations[i].planet === undefined ||
+        destinations[i].vehicle === undefined
+      ) {
+        return true;
+      }
+    }
+    return false;
+  };
 
   const findFalcone = async () => {
     let getTokenRes = await findFalconeService.getToken();
@@ -205,7 +215,11 @@ const Home: React.FC = () => {
 
       <GridBottomContainer container>
         <Grid item xs>
-          <Button variant="contained" onClick={() => handleFindFalcone()}>
+          <Button
+            variant="contained"
+            onClick={() => handleFindFalcone()}
+            disabled={isFindFalconeButtonEnabled()}
+          >
             Find Falcone
           </Button>
         </Grid>
