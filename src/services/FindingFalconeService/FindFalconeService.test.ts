@@ -74,6 +74,6 @@ describe("POST /find - FindFalcone API - success/failure response", () => {
       vehicle_names: vehicle_names,
     };
     const data = await findFalconeService.findFalcone(requestBody);
-    expect(data.status).toBe("success" || "false");
+    expect(data.status === "success" || data.status === "false").toBe(true);
   });
 });
